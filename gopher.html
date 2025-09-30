@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gopher Tortoise Presentation (Gopherus polyphemus)</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for the presentation look */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0fdf4; /* Light Green background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+        .slide-container {
+            width: 100%;
+            max-width: 1024px;
+            min-height: 80vh;
+            background-color: white;
+            border-radius: 1.5rem; /* Large rounded corners */
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            padding: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .slide {
+            display: none; /* Slides are hidden by default */
+            animation: fadeIn 0.6s ease-in-out;
+            height: 100%;
+        }
+        .slide.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        /* Custom table styling */
+        .table-custom th, .table-custom td {
+            padding: 0.8rem;
+            text-align: left;
+            border-bottom: 1px solid #d1fae5;
+        }
+        .table-custom th {
+            background-color: #ecfdf5; /* Very light green for headers */
+            font-weight: 700;
+            color: #047857;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="slide-container">
+        
+        <!-- Slide Content Area -->
+        <div id="presentation-content" class="flex-grow">
+            <!-- Slide 1: Species Overview -->
+            <div id="slide-1" class="slide active">
+                <h1 class="text-4xl font-extrabold text-green-700 mb-6 border-b-4 border-green-400 pb-2">Gopher Tortoise (*Gopherus polyphemus*)</h1>
+                <h2 class="text-2xl font-semibold text-gray-700 mb-6">Slide 1: Species Overview & Conservation Status</h2>
+                
+                <div class="overflow-x-auto rounded-xl shadow-lg mb-6 border border-gray-100">
+                    <table class="w-full table-auto text-base table-custom">
+                        <thead>
+                            <tr>
+                                <th class="w-1/3">Field</th>
+                                <th class="w-2/3">Detail</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>**Scientific Name**</td>
+                                <td>*Gopherus polyphemus*</td>
+                            </tr>
+                            <tr>
+                                <td>**Conservation Status**</td>
+                                <td class="font-bold text-red-600">Federally Threatened (Western population, including parts of Alabama); State Protected (Rest of Alabama)</td>
+                            </tr>
+                            <tr>
+                                <td>**Size (Adult)**</td>
+                                <td>Shell length 6–15 inches (15–37 cm); Weight $\approx 15$ lbs (7 kg).</td>
+                            </tr>
+                            <tr>
+                                <td>**Distinguishing Feature**</td>
+                                <td>Shovel-like, flattened forelimbs used for digging deep burrows.</td>
+                            </tr>
+                            <tr>
+                                <td>**Ecological Role**</td>
+                                <td class="font-bold text-yellow-700">Keystone Species. Over 360 other species rely on their burrows for shelter.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Image Placeholder -->
+                <img src="https://placehold.co/800x400/065f46/ffffff?text=Gopher+Tortoise+Adult" alt="Gopher Tortoise Adult next to burrow" class="w-full h-auto object-cover rounded-xl shadow-2xl" onerror="this.onerror=null;this.src='https://placehold.co/800x400/065f46/ffffff?text=Gopher+Tortoise+Adult'">
+            </div>
+
+            <!-- Slide 2: Habitat and Alabama Distribution -->
+            <div id="slide-2" class="slide">
+                <h1 class="text-4xl font-extrabold text-green-700 mb-6 border-b-4 border-green-400 pb-2">Gopher Tortoise</h1>
+                <h2 class="text-2xl font-semibold text-gray-700 mb-6">Slide 2: Habitat and Alabama Distribution</h2>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="p-6 bg-yellow-50 rounded-xl shadow-lg">
+                        <h3 class="text-xl font-bold text-yellow-700 mb-3">Primary Habitat: The Longleaf Pine Ecosystem</h3>
+                        <ul class="list-disc list-inside space-y-2 text-gray-600 ml-4">
+                            <li>**Required Soil:** Dry, deep, well-drained sandy soils are essential for digging burrows.</li>
+                            <li>**Vegetation:** Open-canopy habitats, such as longleaf pine sandhills and scrub, maintained by frequent natural or prescribed fire.</li>
+                            <li>**Burrow Structure:** Burrows are approximately 15 feet long and up to 10 feet deep, maintaining a stable temperature year-round.</li>
+                        </ul>
+                    </div>
+                    <div class="p-6 bg-green-50 rounded-xl shadow-lg">
+                        <h3 class="text-xl font-bold text-green-700 mb-3">Location in Alabama</h3>
+                        <ul class="list-disc list-inside space-y-2 text-gray-600 ml-4">
+                            <li>**Range:** Found across the Coastal Plain of the southern half of Alabama.</li>
+                            <li>**Federally Threatened:** Applies to populations west of the Mobile and Tombigbee Rivers (Choctaw, Washington, and Mobile counties).</li>
+                            <li>**High Density Sites:** Largest protected populations are found in Conecuh National Forest and Fort Rucker Military Base.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Image Placeholder for habitat map -->
+                <img src="https://placehold.co/800x250/34d399/000000?text=Alabama+Longleaf+Pine+Forest+Habitat" alt="Diagram of Gopher Tortoise Burrow and Habitat" class="w-full h-auto object-cover rounded-xl shadow-xl mt-6" onerror="this.onerror=null;this.src='https://placehold.co/800x250/34d399/000000?text=Alabama+Longleaf+Pine+Forest+Habitat'">
+            </div>
+
+            <!-- Slide 3: Reproduction and Nesting -->
+            <div id="slide-3" class="slide">
+                <h1 class="text-4xl font-extrabold text-green-700 mb-6 border-b-4 border-green-400 pb-2">Gopher Tortoise</h1>
+                <h2 class="text-2xl font-semibold text-gray-700 mb-6">Slide 3: Reproduction and Life Cycle</h2>
+                
+                <div class="overflow-x-auto rounded-xl shadow-lg mb-6 border border-gray-100">
+                    <table class="w-full table-auto text-base table-custom">
+                        <thead>
+                            <tr>
+                                <th class="w-1/3">Characteristic</th>
+                                <th class="w-2/3">Detail</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>**Nesting Season**</td>
+                                <td>May to July. Females typically lay one clutch per year.</td>
+                            </tr>
+                            <tr>
+                                <td>**Nesting Location**</td>
+                                <td class="font-bold text-indigo-700">In the sandy 'apron' (mound of sand) immediately outside the burrow entrance, or nearby in a sunny, open patch.</td>
+                            </tr>
+                            <tr>
+                                <td>**Clutch Size**</td>
+                                <td>Average $\approx 6$ eggs (range: 3–15 eggs). Western populations (like Alabama's) tend to have smaller clutches.</td>
+                            </tr>
+                            <tr>
+                                <td>**Incubation Period**</td>
+                                <td>Approx. 80–100 days. Hatching usually occurs in September.</td>
+                            </tr>
+                            <tr>
+                                <td>**Sex Determination**</td>
+                                <td>Temperature-Dependent: Warmer nests produce females; cooler nests produce males.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="p-4 bg-red-100 border-l-4 border-red-500 text-red-700 rounded-xl">
+                    <p class="font-semibold">Key Vulnerability:</p>
+                    <p>Hatchlings are highly vulnerable to predation (raccoons, foxes, fire ants) and human activity until their shells fully harden (which takes 6-7 years).</p>
+                </div>
+            </div>
+
+            <!-- Slide 4: Tracking Data (AI Model Input) -->
+            <div id="slide-4" class="slide">
+                <h1 class="text-4xl font-extrabold text-green-700 mb-6 border-b-4 border-green-400 pb-2">Gopher Tortoise</h1>
+                <h2 class="text-2xl font-semibold text-gray-700 mb-6">Slide 4: Tracking Data (AI Focus: Burrow and Track Identification)</h2>
+                
+                <h3 class="text-xl font-bold text-teal-700 mb-3">Key Data Points for Tortoise Tracking Model</h3>
+
+                <div class="overflow-x-auto rounded-xl shadow-lg mb-6 border border-gray-100">
+                    <table class="w-full table-auto text-base table-custom">
+                        <thead>
+                            <tr>
+                                <th class="w-1/3">Tracking Parameter</th>
+                                <th class="w-1/3">Typical Measurement</th>
+                                <th class="w-1/3">Model Feature Significance</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>**Burrow Entrance Shape**</td>
+                                <td class="font-bold text-red-600">**Half-moon / Mousehole**</td>
+                                <td>Flat bottom and arched top, matching the shape of the tortoise's shell.</td>
+                            </tr>
+                            <tr>
+                                <td>**Burrow Width**</td>
+                                <td>**$\approx$ Tortoise Shell Length**</td>
+                                <td>Used to estimate the size (and therefore age/maturity) of the tortoise population.</td>
+                            </tr>
+                            <tr>
+                                <td>**Footprint (Track)**</td>
+                                <td class="font-bold text-indigo-700">**Four-toed, Stumpy**</td>
+                                <td>Tracks are clear, stumpy, and four-toed (resembling elephant tracks); unlike the flipper tracks of sea turtles.</td>
+                            </tr>
+                            <tr>
+                                <td>**Feeding Trail**</td>
+                                <td>**Often Visible**</td>
+                                <td>Narrow trails of disturbed vegetation leading from the burrow apron to grazing areas; indicates an *active* burrow.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- Image Placeholder for Burrow Entrance -->
+                <img src="https://placehold.co/800x300/10b981/000000?text=Diagram+of+Gopher+Tortoise+Burrow+Entrance+and+Tracks" alt="Gopher Tortoise Burrow Entrance and Apron Diagram" class="w-full h-auto object-cover rounded-xl shadow-xl" onerror="this.onerror=null;this.src='https://placehold.co/800x300/10b981/000000?text=Diagram+of+Gopher+Tortoise+Burrow+Entrance+and+Tracks'">
+            </div>
+
+            <!-- Slide 5: Resources -->
+            <div id="slide-5" class="slide">
+                <h1 class="text-4xl font-extrabold text-green-700 mb-6 border-b-4 border-green-400 pb-2">Gopher Tortoise</h1>
+                <h2 class="text-2xl font-semibold text-gray-700 mb-6">Slide 5: Resources for Deeper Research and Video</h2>
+                
+                <div class="space-y-4">
+                    <div class="p-4 bg-gray-100 rounded-xl shadow-md">
+                        <h3 class="text-lg font-bold text-gray-800">Outdoor Alabama Official Profile</h3>
+                        <a href="https://www.outdooralabama.com/turtles/gopher-tortoise" target="_blank" class="text-green-500 hover:underline">Outdoor Alabama: Gopher Tortoise</a>
+                        <p class="text-sm text-gray-600">Information specific to the Gopher Tortoise's protected status and conservation projects in Alabama.</p>
+                    </div>
+                    <div class="p-4 bg-gray-100 rounded-xl shadow-md">
+                        <h3 class="text-lg font-bold text-gray-800">U.S. Fish & Wildlife Service Profile</h3>
+                        <a href="https://www.fws.gov/species/gopher-tortoise-gopherus-polyphemus" target="_blank" class="text-green-500 hover:underline">USFWS: Gopher Tortoise Species Profile</a>
+                        <p class="text-sm text-gray-600">Details on federal threatened listing status and recovery plans for the species.</p>
+                    </div>
+                    <div class="p-4 bg-gray-100 rounded-xl shadow-md">
+                        <h3 class="text-lg font-bold text-gray-800">Video: Gopher Tortoise and Burrow Ecology</h3>
+                        <p class="text-sm text-gray-600">Search "Gopher Tortoise - The Keystone Species of the Sandhill" on YouTube for a great video explaining their role.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Navigation Controls -->
+        <div class="mt-8 flex justify-between items-center pt-4 border-t border-gray-200">
+            <button id="prev-btn-2" onclick="changeSlide(2, -1)" disabled class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-full shadow-lg transition duration-150 ease-in-out disabled:opacity-50 disabled:cursor-not-allowed">
+                ← Previous
+            </button>
+            <span id="slide-indicator-2" class="text-lg font-medium text-gray-700">Slide 1 of 5</span>
+            <button id="next-btn-2" onclick="changeSlide(2, 1)" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-full shadow-lg transition duration-150 ease-in-out">
+                Next →
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript for Slide Navigation
+        let currentSlide = 1;
+        const totalSlides = 5;
+
+        // Function to show a specific slide for the Gopher Tortoise presentation
+        function showSlide(n) {
+            const slides = document.querySelectorAll('.slide');
+            const prevBtn = document.getElementById('prev-btn-2');
+            const nextBtn = document.getElementById('next-btn-2');
+            const indicator = document.getElementById('slide-indicator-2');
+
+            // Hide all slides
+            slides.forEach(slide => slide.classList.remove('active'));
+
+            // Ensure n is within bounds
+            if (n > totalSlides) {
+                currentSlide = totalSlides;
+            } else if (n < 1) {
+                currentSlide = 1;
+            } else {
+                currentSlide = n;
+            }
+
+            // Show the current slide
+            document.getElementById(`slide-${currentSlide}`).classList.add('active');
+
+            // Update button states
+            prevBtn.disabled = currentSlide === 1;
+            nextBtn.disabled = currentSlide === totalSlides;
+
+            // Update indicator
+            indicator.textContent = `Slide ${currentSlide} of ${totalSlides}`;
+        }
+
+        // Function to change the slide by a relative amount (1 or -1)
+        function changeSlide(dummy, delta) {
+            showSlide(currentSlide + delta);
+        }
+
+        // Initialize presentation on load
+        window.onload = () => {
+            showSlide(1);
+        };
+    </script>
+
+</body>
+</html>
