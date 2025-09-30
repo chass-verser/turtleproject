@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flattened Musk Turtle: AI Research Presentation</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configure Tailwind to use Inter font and custom colors -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-blue': '#1c7ed6',
+                        'secondary-green': '#37b24d',
+                        'dark-bg': '#1e293b',
+                        'card-bg': '#334155',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom styles for the presentation */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #1e293b; /* dark-bg */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+        .slide-container {
+            width: 100%;
+            max-width: 1024px;
+            height: 100%;
+            min-height: 60vh;
+            background-color: #334155; /* card-bg */
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+            padding: 3rem;
+            border-radius: 1rem;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .slide-content {
+            flex-grow: 1;
+            padding-bottom: 2rem;
+        }
+        .nav-button {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px #0f3d6e;
+        }
+        .nav-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px #0f3d6e;
+        }
+        .nav-button:active {
+            transform: translateY(2px);
+            box-shadow: 0 2px #0f3d6e;
+        }
+        /* Fade transition for slides */
+        .slide {
+            opacity: 0;
+            position: absolute;
+            top: 3rem;
+            left: 3rem;
+            right: 3rem;
+            bottom: 6rem;
+            transition: opacity 0.5s ease-in-out;
+            visibility: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        .slide.active {
+            opacity: 1;
+            visibility: visible;
+            position: static; /* Take up space when active */
+        }
+        .slide-footer {
+            margin-top: auto;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="slide-container text-white">
+        <!-- Slide Content Area -->
+        <div id="slides" class="relative w-full h-full">
+            <!-- Slides will be injected here by JavaScript -->
+        </div>
+
+        <!-- Navigation and Indicator Footer -->
+        <div class="flex justify-between items-center slide-footer">
+            <button id="prevBtn" class="nav-button bg-primary-blue text-white font-bold py-3 px-6 rounded-xl disabled:opacity-50 disabled:cursor-not-allowed">
+                &larr; Prev
+            </button>
+            <div id="slideIndicator" class="text-lg font-medium text-gray-400">
+                Slide 1 of 5
+            </div>
+            <button id="nextBtn" class="nav-button bg-secondary-green text-white font-bold py-3 px-6 rounded-xl disabled:opacity-50 disabled:cursor-not-allowed">
+                Next &rarr;
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Get the globally provided app ID for path construction
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
+
+        // --- Presentation Data ---
+        const presentationData = [
+            // Slide 1: Species Overview
+            {
+                title: "Flattened Musk Turtle (*S. depressus*)",
+                subtitle: "A Critically Endangered Species of Alabama",
+                content: `
+                    <div class="flex flex-col md:flex-row items-center gap-6 mt-4">
+                        <div class="w-full md:w-1/2">
+                            <h3 class="text-2xl font-semibold mb-4 text-primary-blue">Key Facts</h3>
+                            <ul class="space-y-3 list-disc list-inside">
+                                <li>**Scientific Name:** <em>Sternotherus depressus</em></li>
+                                <li>**Conservation Status:** Critically Endangered (IUCN) & Federally Threatened (USFWS).</li>
+                                <li>**Size:** Very small, typically **3 to 4 inches** in length.</li>
+                                <li>**Distinguishing Feature:** Uniquely **flat carapace**, an adaptation to hide in narrow rock crevices. </li>
+                            </ul>
+                        </div>
+                        <div class="w-full md:w-1/2 p-4 bg-card-bg/70 rounded-lg border border-primary-blue/30 shadow-xl">
+                            <h4 class="text-xl font-medium mb-2">Why the flat shell?</h4>
+                            <p class="text-sm text-gray-300">The flattened shape is a crucial survival strategy, allowing the turtle to slip into confined spaces under rocks and boulders to escape predators and strong currents in its river habitat.</p>
+                        </div>
+                    </div>
+                `,
+            },
+            // Slide 2: Habitat and Distribution
+            {
+                title: "Habitat and Distribution in Alabama",
+                subtitle: "Endemic to the Upper Black Warrior River System",
+                content: `
+                    <div class="grid md:grid-cols-2 gap-6 mt-4">
+                        <div>
+                            <h3 class="text-xl font-semibold mb-3 text-secondary-green">Geographic Range</h3>
+                            <ul class="space-y-3 list-disc list-inside">
+                                <li>**Endemic:** Found *nowhere else in the world* except Alabama.</li>
+                                <li>**Historic Range:** Upper **Black Warrior River system**.</li>
+                                <li>**Current Strongholds:** Restricted areas upstream of the Bankhead Dam, especially the **Sipsey Fork**.</li>
+                                <li>**Counties:** Includes portions of Blount, Cullman, Fayette, Jefferson, and others in the area. </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-3 text-secondary-green">Optimal Habitat & Threats</h3>
+                            <ul class="space-y-3 list-disc list-inside">
+                                <li>**Habitat:** Medium-sized, **clear, clean-water streams** with abundant **bedrock, submerged rocks, and crevices**.</li>
+                                <li>**Water:** Alternating shallow shallows and deeper **pools (3.5 to 5 ft)** with a detectable current.</li>
+                                <li>**Major Threat:** **Siltation** (sedimentation) from logging and mining, which fills the vital rock crevices.</li>
+                            </ul>
+                        </div>
+                    </div>
+                `,
+            },
+            // Slide 3: Reproduction and Life Cycle
+            {
+                title: "Reproduction and Life Cycle",
+                subtitle: "Low Reproductive Rate Adds to Vulnerability",
+                content: `
+                    <div class="grid md:grid-cols-3 gap-6 mt-4">
+                        <div class="col-span-2">
+                            <h3 class="text-2xl font-semibold mb-4 text-primary-blue">Nesting Details</h3>
+                            <ul class="space-y-3 list-disc list-inside text-lg">
+                                <li>**Maturity:** Males 4–6 years; Females 6–8 years.</li>
+                                <li>**Nesting Season:** May through September.</li>
+                                <li>**Clutch Size:** Very small, typically **1 to 3 eggs** per clutch.</li>
+                                <li>**Clutches per Year:** Up to **two clutches** annually.</li>
+                                <li>**Nesting Location:** Shallow nests dug near the water's edge, often in **sandy banks** (within 100 feet of the bank).</li>
+                                <li>**Behavior:** Adults are primarily **nocturnal** (active at night) during summer, feeding on snails and mussels.</li>
+                            </ul>
+                        </div>
+                        <div class="col-span-1 p-4 bg-card-bg/70 rounded-lg shadow-xl self-start">
+                             <h4 class="text-xl font-medium mb-2 text-secondary-green">Key Food Source</h4>
+                             <p>Their primary diet consists of **snails and mussels** found on the streambed. A strong population of these mollusks indicates good turtle habitat.</p>
+                             
+                        </div>
+                    </div>
+                `,
+            },
+            // Slide 4: Locomotion and AI Tracking Focus
+            {
+                title: "Locomotion & AI Tracking Data",
+                subtitle: "A Challenge for Land-Based Tracking Models",
+                content: `
+                    <div class="grid md:grid-cols-2 gap-6 mt-4">
+                        <div>
+                            <h3 class="text-2xl font-semibold mb-4 text-primary-blue">Movement Summary</h3>
+                            <ul class="space-y-3 list-disc list-inside text-lg">
+                                <li>**Bottom-Dweller:** Spends most of its life **walking/crawling** along the streambed using its feet to push off rocks.</li>
+                                <li>**Home Range:** Generally small, averaging around **332 meters** of stream length.</li>
+                                <li>**Increased Activity:** Movement increases during the **breeding/nesting season** (April to July) and during light rain.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-semibold mb-4 text-secondary-green">Focus for Your AI Model</h3>
+                            <p class="mb-3">Finding clear land footprints is very difficult, as they rarely leave the water. **Your AI model should focus on:**</p>
+                            <ul class="space-y-3 list-disc list-inside font-bold text-lg">
+                                <li>**Habitat Features:** Identifying areas with high **bedrock/crevice** abundance and low **siltation** levels.</li>
+                                <li>**Radio-Tracking Data:** Analyzing movement paths along stream corridors.</li>
+                                <li>**Nest Site Indicators:** Identifying disturbed areas in sandy banks near the water.</li>
+                            </ul>
+                            
+                        </div>
+                    </div>
+                `,
+            },
+            // Slide 5: Resources and Next Steps
+            {
+                title: "Conservation Resources",
+                subtitle: "Where to find more information",
+                content: `
+                    <div class="grid md:grid-cols-2 gap-6 mt-4">
+                        <div>
+                            <h3 class="text-2xl font-semibold mb-4 text-primary-blue">Useful Search Terms</h3>
+                            <ul class="space-y-3 text-lg">
+                                <li>**Official Status:** "Flattened Musk Turtle (Sternotherus depressus) U.S. Fish & Wildlife Service"</li>
+                                <li>**Conservation:** "Species Spotlight: Flattened Musk Turtle Turtle Survival Alliance"</li>
+                                <li>**Video:** Search YouTube for: "In Search of the Rarest Turtle in North America"</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-semibold mb-4 text-secondary-green">Further Research Ideas</h3>
+                            <p class="text-lg">To enhance your AI model, consider researching:</p>
+                            <ul class="space-y-3 list-disc list-inside text-lg">
+                                <li>The impact of **Asian clams** (an invasive food source) on FMT populations.</li>
+                                <li>The effects of specific water **pollutants** (like coal runoff) on juvenile survival rates.</li>
+                            </ul>
+                        </div>
+                    </div>
+                `,
+            },
+        ];
+
+        let currentSlideIndex = 0;
+        const slidesContainer = document.getElementById('slides');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const indicator = document.getElementById('slideIndicator');
+
+        /**
+         * Renders the slides into the DOM based on the presentationData array.
+         */
+        function renderSlides() {
+            slidesContainer.innerHTML = presentationData.map((slide, index) => `
+                <div id="slide-${index}" class="slide ${index === 0 ? 'active' : ''}">
+                    <div class="slide-content">
+                        <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-2">${slide.title}</h1>
+                        <p class="text-xl md:text-2xl font-light text-gray-300 mb-6 border-b border-primary-blue/50 pb-2">${slide.subtitle}</p>
+                        ${slide.content}
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        /**
+         * Updates the display to show the current slide and hides others.
+         */
+        function updateSlideDisplay() {
+            document.querySelectorAll('.slide').forEach((slide, index) => {
+                slide.classList.remove('active');
+                if (index === currentSlideIndex) {
+                    slide.classList.add('active');
+                }
+            });
+            updateNavigationControls();
+        }
+
+        /**
+         * Updates the navigation buttons (enabled/disabled) and the page indicator.
+         */
+        function updateNavigationControls() {
+            prevBtn.disabled = currentSlideIndex === 0;
+            nextBtn.disabled = currentSlideIndex === presentationData.length - 1;
+            indicator.textContent = `Slide ${currentSlideIndex + 1} of ${presentationData.length}`;
+        }
+
+        /**
+         * Handles moving to the next slide.
+         */
+        function nextSlide() {
+            if (currentSlideIndex < presentationData.length - 1) {
+                currentSlideIndex++;
+                updateSlideDisplay();
+            }
+        }
+
+        /**
+         * Handles moving to the previous slide.
+         */
+        function prevSlide() {
+            if (currentSlideIndex > 0) {
+                currentSlideIndex--;
+                updateSlideDisplay();
+            }
+        }
+
+        // --- Initialization ---
+        document.addEventListener('DOMContentLoaded', () => {
+            renderSlides();
+            updateSlideDisplay(); // Initial setup of the first slide
+
+            // Event Listeners for buttons
+            prevBtn.addEventListener('click', prevSlide);
+            nextBtn.addEventListener('click', nextSlide);
+
+            // Keyboard navigation (optional but helpful)
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight' || e.key === ' ') {
+                    nextSlide();
+                } else if (e.key === 'ArrowLeft') {
+                    prevSlide();
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
