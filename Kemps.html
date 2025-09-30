@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kemp's Ridley Sea Turtle Presentation</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for the presentation look */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0fdf4; /* Light Green background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+        .slide-container {
+            width: 100%;
+            max-width: 1024px;
+            min-height: 80vh;
+            background-color: white;
+            border-radius: 1.5rem; /* Large rounded corners */
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .slide {
+            display: none; /* Slides are hidden by default */
+            animation: fadeIn 0.5s ease-in-out;
+            height: 100%;
+        }
+        .slide.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .table-custom th, .table-custom td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid #f3f4f6;
+        }
+        .table-custom th {
+            background-color: #ecfdf5; /* Light teal for headers */
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="slide-container">
+        
+        <!-- Slide Content -->
+        <div id="presentation-content" class="flex-grow">
+            <!-- Slide 1: Species Overview -->
+            <div id="slide-1" class="slide active">
+                <h1 class="text-4xl font-extrabold text-green-700 mb-6 border-b-4 border-green-500 pb-2">Kemp's Ridley Sea Turtle (*Lepidochelys kempii*)</h1>
+                <h2 class="text-2xl font-semibold text-gray-700 mb-6">Slide 1: Species Overview & Conservation Status</h2>
+                
+                <div class="overflow-x-auto rounded-lg shadow-md mb-6">
+                    <table class="w-full table-auto text-sm table-custom">
+                        <thead>
+                            <tr>
+                                <th class="w-1/3">Field</th>
+                                <th class="w-2/3">Detail</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>**Scientific Name**</td>
+                                <td>*Lepidochelys kempii*</td>
+                            </tr>
+                            <tr>
+                                <td>**Conservation Status**</td>
+                                <td class="font-bold text-red-600">Federally Endangered (ESA); Critically Endangered (IUCN)</td>
+                            </tr>
+                            <tr>
+                                <td>**Size (Adult)**</td>
+                                <td>24–28 inches (60–70 cm) length; 70–100 lbs (32–45 kg) weight</td>
+                            </tr>
+                            <tr>
+                                <td>**Distinguishing Feature**</td>
+                                <td>The smallest sea turtle species. The only species that regularly nests during the **daytime**.</td>
+                            </tr>
+                            <tr>
+                                <td>**Diet**</td>
+                                <td>Carnivorous: Primarily blue crabs, mollusks, snails, shrimp, and occasional fish.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Image Placeholder -->
+                <img src="https://placehold.co/800x400/1e40af/ffffff?text=Kemp's+Ridley+Adult+in+Water" alt="Kemp's Ridley Adult Sea Turtle" class="w-full h-auto object-cover rounded-lg shadow-xl" onerror="this.onerror=null;this.src='https://placehold.co/800x400/1e40af/ffffff?text=Kemp's+Ridley+Adult+in+Water'">
+            </div>
+
+            <!-- Slide 2: Habitat and Distribution -->
+            <div id="slide-2" class="slide">
+                <h1 class="text-4xl font-extrabold text-green-700 mb-6 border-b-4 border-green-500 pb-2">Kemp's Ridley Sea Turtle</h1>
+                <h2 class="text-2xl font-semibold text-gray-700 mb-6">Slide 2: Habitat and Distribution</h2>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="p-6 bg-blue-50 rounded-lg shadow-lg">
+                        <h3 class="text-xl font-bold text-blue-700 mb-3">Primary Habitat (Gulf of Mexico)</h3>
+                        <ul class="list-disc list-inside space-y-2 text-gray-600 ml-4">
+                            <li>**Adults:** Prefer shallow, nearshore coastal (neritic) habitats, usually with muddy or sandy bottoms. They rarely go deeper than 160 feet.</li>
+                            <li>**Juveniles:** Spend 1–2 years in the open ocean (pelagic zone), often hiding and feeding in floating mats of **Sargassum algae**.</li>
+                        </ul>
+                    </div>
+                    <div class="p-6 bg-yellow-50 rounded-lg shadow-lg">
+                        <h3 class="text-xl font-bold text-yellow-700 mb-3">Location in Alabama</h3>
+                        <ul class="list-disc list-inside space-y-2 text-gray-600 ml-4">
+                            <li>**Areas:** Mobile and Baldwin counties (along the Gulf Coast beaches).</li>
+                            <li>**Status:** Regular, but infrequent, visitors and occasional nesters. Alabama is at the northern limit of their nesting range.</li>
+                            <li>**Nesting:** A small number of nests are documented annually (e.g., 4 confirmed nests in 2023), making Alabama a vital area for monitoring.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Image Placeholder for habitat map -->
+                <img src="https://placehold.co/800x250/374151/ffffff?text=Map+of+Gulf+of+Mexico+Range" alt="Map of Gulf of Mexico Range" class="w-full h-auto object-cover rounded-lg shadow-xl mt-6" onerror="this.onerror=null;this.src='https://placehold.co/800x250/374151/ffffff?text=Map+of+Gulf+of+Mexico+Range'">
+            </div>
+
+            <!-- Slide 3: Nesting Habits (Arribadas) -->
+            <div id="slide-3" class="slide">
+                <h1 class="text-4xl font-extrabold text-green-700 mb-6 border-b-4 border-green-500 pb-2">Kemp's Ridley Sea Turtle</h1>
+                <h2 class="text-2xl font-semibold text-gray-700 mb-6">Slide 3: Nesting Habits (Arribadas)</h2>
+                
+                <div class="overflow-x-auto rounded-lg shadow-md mb-6">
+                    <table class="w-full table-auto text-sm table-custom">
+                        <thead>
+                            <tr>
+                                <th class="w-1/3">Characteristic</th>
+                                <th class="w-2/3">Detail</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>**Nesting Season**</td>
+                                <td>May 1 – October 31 (Alabama); Primary nesting April – July.</td>
+                            </tr>
+                            <tr>
+                                <td>**Primary Nesting Site**</td>
+                                <td>Rancho Nuevo, Tamaulipas, Mexico (Over 90% of global nesting).</td>
+                            </tr>
+                            <tr>
+                                <td>**Unique Behavior**</td>
+                                <td class="font-bold text-teal-600">**Arribada** (Mass, synchronized, daytime nesting).</td>
+                            </tr>
+                            <tr>
+                                <td>**Clutch Size**</td>
+                                <td>Average 100 eggs per nest.</td>
+                            </tr>
+                            <tr>
+                                <td>**Incubation Period**</td>
+                                <td>Approx. 45–58 days (sex is determined by sand temperature).</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="p-4 bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700 rounded-lg">
+                    <p class="font-semibold">Key Fact:</p>
+                    <p>The "Arribada" is the synchronized, mass arrival of female turtles to the nesting beach, which occurs in the daytime, unlike most other sea turtle species.</p>
+                </div>
+            </div>
+
+            <!-- Slide 4: Movement, Locomotion, and Tracking Data -->
+            <div id="slide-4" class="slide">
+                <h1 class="text-4xl font-extrabold text-green-700 mb-6 border-b-4 border-green-500 pb-2">Kemp's Ridley Sea Turtle</h1>
+                <h2 class="text-2xl font-semibold text-gray-700 mb-6">Slide 4: Movement, Locomotion, and Tracking Data (AI Focus)</h2>
+                
+                <h3 class="text-xl font-bold text-indigo-700 mb-3">AI Tracking Model Data: Crawl Characteristics</h3>
+
+                <div class="overflow-x-auto rounded-lg shadow-md mb-6">
+                    <table class="w-full table-auto text-sm table-custom">
+                        <thead>
+                            <tr>
+                                <th class="w-1/3">Tracking Parameter</th>
+                                <th class="w-1/3">Data Point</th>
+                                <th class="w-1/3">Notes for AI Model</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>**Crawl Width**</td>
+                                <td class="font-bold text-red-600">**80 cm (average)**</td>
+                                <td>Crucial for species identification vs. Loggerheads (which have wider crawls).</td>
+                            </tr>
+                            <tr>
+                                <td>**Crawl Pattern**</td>
+                                <td>**Alternating crawl**</td>
+                                <td>Two parallel rows of marks from alternating left/right flippers.</td>
+                            </tr>
+                            <tr>
+                                <td>**Movement Rate**</td>
+                                <td>Up to 26.6 km/day</td>
+                                <td>High mobility for a sea turtle species.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Image Placeholder for Crawl Track -->
+                <img src="https://placehold.co/800x300/38a169/000000?text=Kemp's+Ridley+Crawl+Track+Diagram+(80+cm+Width)" alt="Kemp's Ridley Crawl Track in Sand" class="w-full h-auto object-cover rounded-lg shadow-xl" onerror="this.onerror=null;this.src='https://placehold.co/800x300/38a169/000000?text=Kemp's+Ridley+Crawl+Track+Diagram+(80+cm+Width)'">
+            </div>
+
+            <!-- Slide 5: Resources -->
+            <div id="slide-5" class="slide">
+                <h1 class="text-4xl font-extrabold text-green-700 mb-6 border-b-4 border-green-500 pb-2">Kemp's Ridley Sea Turtle</h1>
+                <h2 class="text-2xl font-semibold text-gray-700 mb-6">Slide 5: Resources for Deeper Research</h2>
+                
+                <div class="space-y-4">
+                    <div class="p-4 bg-gray-100 rounded-lg shadow-md">
+                        <h3 class="text-lg font-bold text-gray-800">Official Profile (NOAA Fisheries)</h3>
+                        <a href="https://www.fisheries.noaa.gov/species/kemps-ridley-turtle" target="_blank" class="text-blue-500 hover:underline">https://www.fisheries.noaa.gov/species/kemps-ridley-turtle</a>
+                        <p class="text-sm text-gray-600">Detailed biological and conservation data.</p>
+                    </div>
+                    <div class="p-4 bg-gray-100 rounded-lg shadow-md">
+                        <h3 class="text-lg font-bold text-gray-800">Local Alabama Data (Outdoor Alabama)</h3>
+                        <a href="https://www.outdooralabama.com/turtles/kemps-ridley-sea-turtle" target="_blank" class="text-blue-500 hover:underline">https://www.outdooralabama.com/turtles/kemps-ridley-sea-turtle</a>
+                        <p class="text-sm text-gray-600">Focuses on Alabama distribution and status.</p>
+                    </div>
+                    <div class="p-4 bg-gray-100 rounded-lg shadow-md">
+                        <h3 class="text-lg font-bold text-gray-800">Educational Video (PBS LearningMedia)</h3>
+                        <p class="text-sm text-gray-600">Search "Life Cycle of the World's Most Seriously Endangered Sea Turtle: Kemp's Ridley" on YouTube or PBS LearningMedia.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Navigation Controls -->
+        <div class="mt-8 flex justify-between items-center pt-4 border-t border-gray-200">
+            <button id="prev-btn" onclick="changeSlide(-1)" disabled class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-full shadow-lg transition duration-150 ease-in-out disabled:opacity-50 disabled:cursor-not-allowed">
+                ← Previous
+            </button>
+            <span id="slide-indicator" class="text-lg font-medium text-gray-700">Slide 1 of 5</span>
+            <button id="next-btn" onclick="changeSlide(1)" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-full shadow-lg transition duration-150 ease-in-out">
+                Next →
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript for Slide Navigation
+        let currentSlide = 1;
+        const totalSlides = 5;
+
+        // Function to show a specific slide
+        function showSlide(n) {
+            const slides = document.querySelectorAll('.slide');
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+            const indicator = document.getElementById('slide-indicator');
+
+            // Hide all slides
+            slides.forEach(slide => slide.classList.remove('active'));
+
+            // Ensure n is within bounds
+            if (n > totalSlides) {
+                currentSlide = totalSlides;
+            } else if (n < 1) {
+                currentSlide = 1;
+            } else {
+                currentSlide = n;
+            }
+
+            // Show the current slide
+            document.getElementById(`slide-${currentSlide}`).classList.add('active');
+
+            // Update button states
+            prevBtn.disabled = currentSlide === 1;
+            nextBtn.disabled = currentSlide === totalSlides;
+
+            // Update indicator
+            indicator.textContent = `Slide ${currentSlide} of ${totalSlides}`;
+        }
+
+        // Function to change the slide by a relative amount (1 or -1)
+        function changeSlide(delta) {
+            showSlide(currentSlide + delta);
+        }
+
+        // Initialize presentation on load
+        window.onload = () => {
+            showSlide(1);
+        };
+    </script>
+
+</body>
+</html>
