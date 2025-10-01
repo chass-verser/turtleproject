@@ -3,147 +3,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Turtle Species</title>
+    <title>The Turtle Species - Project Index</title>
+    <!-- Load Tailwind CSS CDN for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Basic Styling */
+        /* Apply a custom font and smooth scrolling */
         body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+            background-color: #f7fbf8; /* Light, calming background */
         }
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: white;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-        }
-        h1 {
-            color: #006400; /* Dark Green */
-            text-align: center;
-            padding-bottom: 10px;
-            border-bottom: 3px solid #008000;
-        }
-        p {
-            line-height: 1.6;
-            text-align: justify;
-        }
-
-        /* Turtle Links Section */
-        .turtle-links {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            margin-top: 30px;
-        }
-        .turtle-card {
-            width: 300px;
-            margin: 15px;
-            padding: 15px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            text-align: center;
-            background-color: #e8f5e9; /* Light green background for cards */
-            transition: transform 0.3s ease-in-out;
-        }
-        .turtle-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Turtle Image Styling */
-        .turtle-card img {
-            width: 100%;
-            height: auto;
-            max-height: 180px;
-            object-fit: cover;
-            border-radius: 6px;
-            margin-bottom: 10px;
-            border: 2px solid #008000;
-        }
-
-        /* Pioneer/Pioneer Timeframe Styling */
-        .pioneer-info {
-            font-size: 0.9em;
-            color: #333;
-            margin: 10px 0;
-            font-style: italic;
-            min-height: 40px; /* Ensures consistent card height */
-        }
-        .pioneer-info strong {
-            color: #8b4513; /* Saddle Brown for emphasis */
-        }
-
-        /* Button Styling */
-        .button {
-            display: inline-block;
-            padding: 10px 20px;
-            margin-top: 10px;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: background-color 0.3s ease;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        .button:hover {
-            opacity: 0.9;
-        }
-
-        /* Specific Button Colors for visual appeal */
-        .btn-kemps { background-color: #00bfff; } /* Deep Sky Blue */
-        .btn-loggerhead { background-color: #ff8c00; } /* Dark Orange */
-        .btn-gopher { background-color: #808000; } /* Olive */
-        .btn-flattened { background-color: #4682b4; } /* Steel Blue */
-        .btn-alabama { background-color: #dc143c; } /* Crimson */
-
     </style>
 </head>
-<body>
-    <div class="container">
-        <h1>The Turtle Species</h1>
+<body class="min-h-screen">
 
-        <hr>
+    <!-- Header Section -->
+    <header class="bg-teal-700 shadow-xl p-6 md:p-10">
+        <div class="max-w-6xl mx-auto text-center">
+            <h1 class="text-4xl sm:text-5xl font-extrabold text-white tracking-tight">
+                The Turtle Species
+            </h1>
+        </div>
+    </header>
 
-        <p>
-            Welcome to the comprehensive guide to five fascinating turtle species. Turtles, ancient reptiles that have roamed the Earth for millions of years, represent incredible diversity, from the vast, migratory **sea turtles** to the burrow-dwelling **tortoises** and the specialized **freshwater turtles**. This collection of interactive slide presentations explores the unique biology, habitats, and conservation status of the Kemp's Ridley Sea Turtle, Loggerhead Sea Turtle, Gopher Tortoise, Flattened Musk Turtle, and the Alabama Red-bellied Turtle. Dive in to learn more about these remarkable creatures and the pioneers who helped bring them to scientific light.
-        </p>
+    <!-- Opening Paragraph Section -->
+    <section class="py-12 md:py-16 px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-2xl font-semibold text-teal-800 mb-6">A Journey Through Chelonian Diversity</h2>
+            <p class="text-lg text-gray-700 leading-relaxed">
+                Welcome to the Turtle Species project! The order <span class="font-medium italic">Testudines</span>, which encompasses turtles, tortoises, and terrapins, represents one of the oldest reptile groups, with a lineage stretching back over 200 million years. From the vast, open ocean to small, freshwater streams and dry, arid land, these remarkable creatures have evolved specialized adaptations to thrive in diverse environments. Explore the five fascinating species below—including both aquatic sea turtles and terrestrial tortoises—to dive into their unique biology, ecological roles, and conservation challenges through interactive slide presentations.
+            </p>
+        </div>
+    </section>
 
-        <hr>
+    <!-- Turtle Species Links Section -->
+    <section class="pb-16 px-4">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Species Interactive Presentations</h2>
 
-        <h2>Species Profiles</h2>
-        <div class="turtle-links">
+            <!-- Grid Layout for Turtle Cards (Responsive) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-            <div class="turtle-card">
-                <h3>Loggerhead Sea Turtle</h3>
-                <p class="pioneer-info">
-                    Pioneer: **Carolus Linnaeus**, 1758
-                    <br>
-                </p>
-                <img src="https://via.placeholder.com/300x180/ff8c00/ffffff?text=Loggerhead+Sea+Turtle" alt="Loggerhead Sea Turtle">
-                <a href="loggerhead.html" class="button btn-loggerhead">
-                    Explore Loggerhead Slides
-                </a>
+                <!-- 1. Alabama Red-bellied Turtle (Alphabetical Order) -->
+                <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition duration-300 overflow-hidden border-b-4 border-red-600">
+                    <img src="https://placehold.co/600x400/DC2626/ffffff?text=Alabama+Red-bellied+Turtle"
+                         onerror="this.onerror=null;this.src='https://placehold.co/600x400/DC2626/ffffff?text=Turtle+Image';"
+                         alt="Image of the Alabama Red-bellied Turtle" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Alabama Red-bellied Turtle</h3>
+                        <p class="text-sm italic text-gray-500 mb-4">(<span class="font-medium">Pseudemys rubriventris</span>)</p>
+                        <a href="alabama.html"
+                           class="w-full block text-center bg-red-600 text-white py-3 px-4 rounded-lg font-semibold shadow-md hover:bg-red-700 transition duration-150 transform hover:scale-[1.02]">
+                            View Slide Presentation
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 2. Flattened Musk Turtle -->
+                <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition duration-300 overflow-hidden border-b-4 border-yellow-600">
+                    <img src="https://placehold.co/600x400/D97706/ffffff?text=Flattened+Musk+Turtle"
+                         onerror="this.onerror=null;this.src='https://placehold.co/600x400/D97706/ffffff?text=Turtle+Image';"
+                         alt="Image of the Flattened Musk Turtle" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Flattened Musk Turtle</h3>
+                        <p class="text-sm italic text-gray-500 mb-4">(<span class="font-medium">Sternotherus depressus</span>)</p>
+                        <a href="flattened.html"
+                           class="w-full block text-center bg-yellow-600 text-white py-3 px-4 rounded-lg font-semibold shadow-md hover:bg-yellow-700 transition duration-150 transform hover:scale-[1.02]">
+                            View Slide Presentation
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 3. Gopher Tortoise -->
+                <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition duration-300 overflow-hidden border-b-4 border-lime-600">
+                    <img src="https://placehold.co/600x400/65A30D/ffffff?text=Gopher+Tortoise"
+                         onerror="this.onerror=null;this.src='https://placehold.co/600x400/65A30D/ffffff?text=Turtle+Image';"
+                         alt="Image of the Gopher Tortoise" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Gopher Tortoise</h3>
+                        <p class="text-sm italic text-gray-500 mb-4">(<span class="font-medium">Gopherus polyphemus</span>)</p>
+                        <a href="gopher.html"
+                           class="w-full block text-center bg-lime-600 text-white py-3 px-4 rounded-lg font-semibold shadow-md hover:bg-lime-700 transition duration-150 transform hover:scale-[1.02]">
+                            View Slide Presentation
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 4. Kemp's Ridley Sea Turtle -->
+                <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition duration-300 overflow-hidden border-b-4 border-blue-600">
+                    <img src="https://placehold.co/600x400/2563EB/ffffff?text=Kemp's+Ridley+Sea+Turtle"
+                         onerror="this.onerror=null;this.src='https://placehold.co/600x400/2563EB/ffffff?text=Turtle+Image';"
+                         alt="Image of the Kemp's Ridley Sea Turtle" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Kemp's Ridley Sea Turtle</h3>
+                        <p class="text-sm italic text-gray-500 mb-4">(<span class="font-medium">Lepidochelys kempii</span>)</p>
+                        <a href="Kemps.html"
+                           class="w-full block text-center bg-blue-600 text-white py-3 px-4 rounded-lg font-semibold shadow-md hover:bg-blue-700 transition duration-150 transform hover:scale-[1.02]">
+                            View Slide Presentation
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 5. Loggerhead Sea Turtle -->
+                <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition duration-300 overflow-hidden border-b-4 border-purple-600">
+                    <img src="https://placehold.co/600x400/9333EA/ffffff?text=Loggerhead+Sea+Turtle"
+                         onerror="this.onerror=null;this.src='https://placehold.co/600x400/9333EA/ffffff?text=Turtle+Image';"
+                         alt="Image of the Loggerhead Sea Turtle" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Loggerhead Sea Turtle</h3>
+                        <p class="text-sm italic text-gray-500 mb-4">(<span class="font-medium">Caretta caretta</span>)</p>
+                        <a href="loggerhead.html"
+                           class="w-full block text-center bg-purple-600 text-white py-3 px-4 rounded-lg font-semibold shadow-md hover:bg-purple-700 transition duration-150 transform hover:scale-[1.02]">
+                            View Slide Presentation
+                        </a>
+                    </div>
+                </div>
+
             </div>
+            <!-- End Grid Layout -->
 
-            <div class="turtle-card">
-                <h3>Gopher Tortoise</h3>
-                <p class="pioneer-info">
-                    Pioneer: **François Marie Daudin**, 1801
-                    <br>
-                </p>
-                <img src="https://via.placeholder.com/300x180/808000/ffffff?text=Gopher+Tortoise" alt="Gopher Tortoise">
-                <a href="gopher.html" class="button btn-gopher">
-                    Explore Gopher Slides
-                </a>
-            </div>
+        </div>
+    </section>
 
-            <div class="turtle-card">
-                <h3>Kemp's Ridley Sea Turtle</h3>
-                <p class="pioneer-info">
+    <!-- Footer -->
+    <footer class="bg-teal-700 mt-12 py-6">
+        <div class="max-w-6xl mx-auto text-center text-white text-sm">
+            &copy; 2025 Turtle Species Project
+        </div>
+    </footer>
+
+</body>
+</html>
+
+  
