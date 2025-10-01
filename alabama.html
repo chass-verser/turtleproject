@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Endangered Turtle Research: Alabama Red-bellied Turtle</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configure Tailwind for custom aesthetics -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#059669', // Emerald Green
+                        'secondary': '#10b981', // Green
+                        'dark-bg': '#1f2937', // Dark Slate
+                        'card-bg': '#374151', // Medium Slate
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom styles for aesthetic enhancements */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: '#111827'; /* Darker background */
+        }
+        .slide-card {
+            min-height: 60vh;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .text-latex {
+            /* Basic styling for formulas (using LaTeX notation) */
+            font-family: monospace;
+            color: '#fcd34d'; /* Amber for equations/names */
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8 flex items-center justify-center min-h-screen">
+
+    <div id="presentation-container" class="w-full max-w-4xl bg-dark-bg p-6 md:p-10 rounded-xl shadow-2xl border border-primary/50">
+
+        <!-- Presentation Title -->
+        <header class="text-center mb-8">
+            <h1 class="text-3xl md:text-4xl font-extrabold text-white mb-2">
+                Endangered Turtles of Alabama
+            </h1>
+            <p class="text-xl md:text-2xl font-semibold text-secondary">
+                The Alabama Red-bellied Turtle
+            </p>
+            <p class="text-sm text-gray-400 mt-1">
+                (<span class="text-latex">Pseudemys alabamensis</span>)
+            </p>
+        </header>
+
+        <!-- Main Slide Content Area -->
+        <div id="slide-content" class="slide-card bg-card-bg p-6 md:p-8 rounded-lg shadow-lg text-white">
+            <!-- Content will be injected here by JavaScript -->
+        </div>
+
+        <!-- Navigation Controls -->
+        <div class="flex justify-between mt-6">
+            <button id="prev-btn" class="px-6 py-2 bg-gray-500 hover:bg-gray-600 text-white font-bold rounded-full shadow-md transition duration-200 disabled:opacity-50 disabled:cursor-not-allowed">
+                &larr; Previous
+            </button>
+            <div id="slide-indicator" class="text-lg font-medium text-gray-300 self-center">Slide 1 of 3</div>
+            <button id="next-btn" class="px-6 py-2 bg-primary hover:bg-secondary text-white font-bold rounded-full shadow-md transition duration-200 disabled:opacity-50 disabled:cursor-not-allowed">
+                Next &rarr;
+            </button>
+        </div>
+
+    </div>
+
+    <script>
+        // Global variables for elements and state
+        const slideContent = document.getElementById('slide-content');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const slideIndicator = document.getElementById('slide-indicator');
+        let currentSlide = 0;
+
+        // --- Slide Data ---
+        // Array containing all content for each slide
+        const slides = [
+            {
+                title: 'Slide 1: Species Overview',
+                content: `
+                    <h2 class="text-3xl font-bold mb-4 text-primary">🐢 The Alabama Red-bellied Turtle</h2>
+                    <div class="space-y-4 text-gray-200">
+                        <div class="md:flex md:space-x-6">
+                            <div class="md:w-2/3">
+                                <p><strong class="text-secondary">Scientific Name:</strong> <span class="text-latex">Pseudemys alabamensis</span></p>
+                                <p><strong class="text-secondary">Conservation Status:</strong> <span class="text-red-400 font-semibold">Endangered</span> (Federally Listed). It is also the Official State Reptile of Alabama.</p>
+                                <p class="mt-4"><strong class="text-secondary">Description:</strong> A large, freshwater turtle. Females can reach up to 15 inches in carapace length. The upper shell (carapace) is olive to dark brown with yellow/red streaks. The lower shell (plastron) is a distinguishing bright <span class="text-red-300 font-bold">red</span> or orange.</p>
+                                <p class="mt-2"><strong class="text-secondary">Unique Feature:</strong> It has a prominent notch at the tip of the upper jaw, bordered on each side by a tooth-like cusp.</p>
+                            </div>
+                            <div class="md:w-1/3 mt-4 md:mt-0">
+                                <!-- Image of Alabama Red-bellied Turtle -->
+                                <img src="https://placehold.co/300x200/059669/ffffff?text=Alabama+Red-bellied+Turtle"
+                                     alt="Illustration of the Alabama Red-bellied Turtle"
+                                     class="rounded-lg shadow-xl w-full object-cover border-2 border-secondary"
+                                     onerror="this.src='https://placehold.co/300x200/059669/ffffff?text=Image+Unavailable';"
+                                     loading="lazy">
+                                <p class="text-xs text-gray-400 mt-1 text-center">
+                                    
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                `,
+                followUps: []
+            },
+            {
+                title: 'Slide 2: Habitat and Distribution',
+                content: `
+                    <h2 class="text-3xl font-bold mb-4 text-primary">🌊 Habitat and Distribution</h2>
+                    <div class="space-y-6 text-gray-200">
+                        <div>
+                            <strong class="text-secondary text-xl block mb-2">Preferred Habitat</strong>
+                            <ul class="list-disc list-inside ml-4 space-y-2">
+                                <li>Found in **shallow, vegetated backwaters** of freshwater streams, rivers, bays, and bayous.</li>
+                                <li>They prefer soft, muddy bottoms and areas with extensive beds of **submergent aquatic macrophytes** (aquatic plants) for food and cover.</li>
+                                <li>Although primarily freshwater, they tolerate **low-salinity brackish water** near the coast.</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <strong class="text-secondary text-xl block mb-2">Distribution in Alabama</strong>
+                            <div class="md:flex md:space-x-6">
+                                <div class="md:w-2/3">
+                                    <p>The turtle's range is highly restricted to the **Mobile-Tensaw River Delta** in:</p>
+                                    <ul class="list-disc list-inside ml-4 mt-2 space-y-1">
+                                        <li>**Mobile County**</li>
+                                        <li>**Baldwin County**</li>
+                                    </ul>
+                                    <p class="mt-2">They inhabit major rivers and tributaries that flow into **Mobile Bay**, making this delicate delta system crucial for their survival.</p>
+                                </div>
+                                <div class="md:w-1/3 mt-4 md:mt-0">
+                                    <!-- Placeholder for a map or delta illustration -->
+                                    <img src="https://placehold.co/300x200/05684c/ffffff?text=Mobile-Tensaw+Delta+Map"
+                                         alt="Map of Mobile-Tensaw River Delta"
+                                         class="rounded-lg shadow-xl w-full object-cover border-2 border-secondary"
+                                         loading="lazy">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `,
+                followUps: []
+            },
+            {
+                title: 'Slide 3: Nesting, Movement, and Resources',
+                content: `
+                    <h2 class="text-3xl font-bold mb-4 text-primary">🥚 Nesting and Movement</h2>
+                    <div class="space-y-6 text-gray-200">
+                        <div class="md:flex md:space-x-6">
+                            <div class="md:w-2/3 space-y-4">
+                                <div>
+                                    <strong class="text-secondary text-xl block mb-2">Nesting Habits</strong>
+                                    <ul class="list-disc list-inside ml-4 space-y-1">
+                                        <li>**Season:** April to August (peak in July).</li>
+                                        <li>**Location:** Females nest on dry land, typically in sandy soil near river banks, levees, or sandbars, requiring non-flooded, open areas.</li>
+                                        <li>**Clutch Size:** Between 4 to 17 eggs per nest.</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <strong class="text-secondary text-xl block mb-2">Locomotion and Tracks</strong>
+                                    <p>The turtle is highly **motile** and primarily moves via **swimming (natatorial)**, but females travel considerable distances over land to nest.</p>
+                                    <p>For your tracking model, turtle tracks are typically alternating or drag-marks in soft sand/mud near nesting sites.</p>
+                                </div>
+                            </div>
+                            <div class="md:w-1/3 mt-4 md:mt-0">
+                                <!-- Placeholder for tracks/footprints -->
+                                <img src="https://placehold.co/300x200/4b5563/ffffff?text=Turtle+Tracks+Illustration"
+                                     alt="Illustration of general turtle tracks in sand"
+                                     class="rounded-lg shadow-xl w-full object-cover border-2 border-gray-400"
+                                     loading="lazy">
+                                <p class="text-xs text-gray-400 mt-1 text-center">
+                                     Note: Exact footprints of P. alabamensis in soft substrate are rare and usually appear as a wide furrow (drag mark) with alternating prints.
+                                </p>
+                            </div>
+                        </div>
+
+                        <hr class="border-gray-600">
+
+                        <!-- External Resources -->
+                        <div>
+                            <strong class="text-secondary text-xl block mb-2">Additional Resources</strong>
+                            <ul class="list-disc list-inside ml-4 space-y-1 text-blue-400">
+                                <li><a href="https://www.outdooralabama.com/turtles/alabama-red-bellied-turtle" target="_blank" class="hover:underline">Outdoor Alabama Species Profile (Official Info)</a></li>
+                                <li><a href="https://www.youtube.com/watch?v=7AJQRYBRfP4" target="_blank" class="hover:underline">Video: Alabama Red-Bellied Turtle (YouTube)</a></li>
+                                <li><a href="https://ecos.fws.gov/ecp/species/1494" target="_blank" class="hover:underline">U.S. Fish & Wildlife Service ECOS Profile</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                `,
+                followUps: []
+            }
+        ];
+
+        // --- Functions ---
+
+        // Function to render the current slide content
+        function renderSlide() {
+            const slide = slides[currentSlide];
+
+            // Update content with a slight fade effect
+            slideContent.style.opacity = '0';
+            setTimeout(() => {
+                slideContent.innerHTML = slide.content;
+                slideContent.style.opacity = '1';
+                updateNavigation();
+            }, 500); // Match transition duration
+        }
+
+        // Function to update the navigation buttons and indicator
+        function updateNavigation() {
+            prevBtn.disabled = currentSlide === 0;
+            nextBtn.disabled = currentSlide === slides.length - 1;
+            // FIX: Changed from template literal (which might cause SyntaxError in some environments)
+            // to standard string concatenation.
+            slideIndicator.textContent = 'Slide ' + (currentSlide + 1) + ' of ' + slides.length;
+        }
+
+        // Event listeners for navigation
+        nextBtn.addEventListener('click', () => {
+            if (currentSlide < slides.length - 1) {
+                currentSlide++;
+                renderSlide();
+            }
+        });
+
+        prevBtn.addEventListener('click', () => {
+            if (currentSlide > 0) {
+                currentSlide--;
+                renderSlide();
+            }
+        });
+
+        // Initialize the presentation
+        window.onload = renderSlide;
+    </script>
+
+</body>
+</html>
