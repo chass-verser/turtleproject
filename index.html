@@ -1,1 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Turtle Species</title>
+    <style>
+        /* Basic Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h1 {
+            color: #006400; /* Dark Green */
+            text-align: center;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #008000;
+        }
+        p {
+            line-height: 1.6;
+            text-align: justify;
+        }
 
+        /* Turtle Links Section */
+        .turtle-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 30px;
+        }
+        .turtle-card {
+            width: 300px;
+            margin: 15px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            text-align: center;
+            background-color: #e8f5e9; /* Light green background for cards */
+            transition: transform 0.3s ease-in-out;
+        }
+        .turtle-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Turtle Image Styling */
+        .turtle-card img {
+            width: 100%;
+            height: auto;
+            max-height: 180px;
+            object-fit: cover;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            border: 2px solid #008000;
+        }
+
+        /* Pioneer/Pioneer Timeframe Styling */
+        .pioneer-info {
+            font-size: 0.9em;
+            color: #333;
+            margin: 10px 0;
+            font-style: italic;
+            min-height: 40px; /* Ensures consistent card height */
+        }
+        .pioneer-info strong {
+            color: #8b4513; /* Saddle Brown for emphasis */
+        }
+
+        /* Button Styling */
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 10px;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .button:hover {
+            opacity: 0.9;
+        }
+
+        /* Specific Button Colors for visual appeal */
+        .btn-kemps { background-color: #00bfff; } /* Deep Sky Blue */
+        .btn-loggerhead { background-color: #ff8c00; } /* Dark Orange */
+        .btn-gopher { background-color: #808000; } /* Olive */
+        .btn-flattened { background-color: #4682b4; } /* Steel Blue */
+        .btn-alabama { background-color: #dc143c; } /* Crimson */
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>The Turtle Species</h1>
+
+        <hr>
+
+        <p>
+            Welcome to the comprehensive guide to five fascinating turtle species. Turtles, ancient reptiles that have roamed the Earth for millions of years, represent incredible diversity, from the vast, migratory **sea turtles** to the burrow-dwelling **tortoises** and the specialized **freshwater turtles**. This collection of interactive slide presentations explores the unique biology, habitats, and conservation status of the Kemp's Ridley Sea Turtle, Loggerhead Sea Turtle, Gopher Tortoise, Flattened Musk Turtle, and the Alabama Red-bellied Turtle. Dive in to learn more about these remarkable creatures and the pioneers who helped bring them to scientific light.
+        </p>
+
+        <hr>
+
+        <h2>Species Profiles</h2>
+        <div class="turtle-links">
+
+            <div class="turtle-card">
+                <h3>Loggerhead Sea Turtle</h3>
+                <p class="pioneer-info">
+                    Pioneer: **Carolus Linnaeus**, 1758
+                    <br>
+                </p>
+                <img src="https://via.placeholder.com/300x180/ff8c00/ffffff?text=Loggerhead+Sea+Turtle" alt="Loggerhead Sea Turtle">
+                <a href="loggerhead.html" class="button btn-loggerhead">
+                    Explore Loggerhead Slides
+                </a>
+            </div>
+
+            <div class="turtle-card">
+                <h3>Gopher Tortoise</h3>
+                <p class="pioneer-info">
+                    Pioneer: **François Marie Daudin**, 1801
+                    <br>
+                </p>
+                <img src="https://via.placeholder.com/300x180/808000/ffffff?text=Gopher+Tortoise" alt="Gopher Tortoise">
+                <a href="gopher.html" class="button btn-gopher">
+                    Explore Gopher Slides
+                </a>
+            </div>
+
+            <div class="turtle-card">
+                <h3>Kemp's Ridley Sea Turtle</h3>
+                <p class="pioneer-info">
